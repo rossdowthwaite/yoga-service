@@ -12,7 +12,11 @@ const start = (options) => {
   return new Promise((resolve, reject) => {
 
     if(!options.repo) {
-      reject(new Error('Repo error: ' + error))
+      reject(new Error('repository error'))
+    }
+
+    if(!options.port) {
+      reject(new Error('port error'))
     }
 
     const app = express();
@@ -37,7 +41,7 @@ const start = (options) => {
       res.status(500).send('Something went wrong!')
     })
 
-    const port = normalizePort(process.env.DATABASE_PORT);
+    const port = normalizePort(process.env.DB_PORT);
 
     const server = http.createServer(app);
 

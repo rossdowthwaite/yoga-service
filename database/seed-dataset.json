@@ -1,0 +1,73 @@
+[{
+	"name": "Downward-Facing dog",
+	"slug": "downward-facing-dog",
+	"next_moves": ["box-neutral", "warrior-2", "One Legged Downward-Facing Dog"],
+	"tags": ["Yoga"],
+	"level": "Beginner",
+	"image_url": "someUrl",
+	"start": false,
+	"description": "Yoga-move!"
+}, {
+	"name": "Box Neutral",
+	"slug": "box-neutral",
+	"next_moves": ["downward-facing-dog", "extended-puppy", "balancing-the-cat"],
+	"tags": ["Yoga"],
+	"level": "Beginner",
+	"image_url": "someUrl",
+	"start": false,
+	"description": "Yoga-move!"
+}, {
+	"name": "Extended Puppy",
+	"slug": "extended-puppy",
+	"next_moves": ["box-neutral"],
+	"tags": ["Yoga"],
+	"level": "Beginner",
+	"image_url": "someUrl",
+	"start": false,
+	"description": "Yoga-move!"
+}, {
+	"name": "Balancing the Cat",
+	"slug": "balancing-the-cat",
+	"next_moves": ["box-neutral", "half-bow"],
+	"tags": ["Yoga"],
+	"level": "Beginner",
+	"image_url": "someUrl",
+	"start": false,
+	"description": "Yoga-move!"
+}, {
+	"name": "Half Bow",
+	"slug": "half-bow",
+	"next_moves": ["box-neutral", "balancing-the-cat"],
+	"tags": ["Yoga"],
+	"level": "Beginner",
+	"image_url": "someUrl",
+	"start": false,
+	"description": "Yoga-move!"
+}, {
+	"name": "One Legged Downward-Facing Dog",
+	"slug": "one-legged-downward-facing-dog",
+	"next_moves": ["downward-facing-dog"],
+	"tags": ["Yoga"],
+	"level": "Beginner",
+	"image_url": "someUrl",
+	"start": false,
+	"description": "Yoga-move!"
+}, {
+	"name": "Warrior II",
+	"slug": "warrior-2",
+	"next_moves": ["plank"],
+	"tags": ["Yoga"],
+	"level": "Beginner",
+	"image_url": "someUrl",
+	"start": false,
+	"description": "Yoga-move!"
+}, {
+	"name": "Plank",
+	"slug": "plank",
+	"next_moves": ["box-neutral", "downward-facing-dog"],
+	"tags": ["Yoga"],
+	"level": "Beginner",
+	"image_url": "someUrl",
+	"start": false,
+	"description": "Yoga-move!"
+}]

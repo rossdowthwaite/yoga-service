@@ -31,6 +31,12 @@ mongo --port 27017 -u "admin" -p "password" --authenticationDatabase "admin"
 
 [Shell command list](https://docs.mongodb.com/manual/reference/mongo-shell/)
 
+**Seed the database**
+
+```
+mongoimport --db yoga-service --collection positions --drop --file ./database/seed-dataset.json --jsonArray
+```
+
 ## Yoga Service
 
 Run

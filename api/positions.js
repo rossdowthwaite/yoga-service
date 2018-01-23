@@ -19,7 +19,7 @@ module.exports = (app, options) => {
   app.get('/positions/:name/', (req, res, next) => {
     repo.getPositionByName(req.params)
       .then( position => {
-        res.send(position);
+        res.status(status.OK).json(position)
       })
       .catch(next)
   })

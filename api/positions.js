@@ -16,10 +16,34 @@ module.exports = (app, options) => {
       .catch(next)
   })
 
-  app.get('/positions/:name/', (req, res, next) => {
-    repo.getPositionByName(req.params)
+  app.get('/positions/:slug/', (req, res, next) => {
+    repo.getPositionBySlug(req.params)
       .then( position => {
         res.status(status.OK).json(position)
+      })
+      .catch(next)
+  })
+
+  app.get('/positions/:slug/next', (req, res, next) => {
+    repo.getNextMoves(req.params)
+      .then( moves => {
+        res.status(status.OK).json(moves)
+      })
+      .catch(next)
+  })
+
+  app.get('/positions/:slug/next/:level', (req, res, next) => {
+    repo.getNextMovesByLevel(req.params)
+      .then( moves => {
+        res.status(status.OK).json(moves)
+      })
+      .catch(next)
+  })
+
+  app.get('/positions/level/:level', (req, res, next) => {
+    repo.getPositionsByLevel(req.params)
+      .then( positions => {
+        res.status(status.OK).json(positions)
       })
       .catch(next)
   })

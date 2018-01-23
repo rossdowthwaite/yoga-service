@@ -1,52 +1,45 @@
+const PositionModel = require('../models/positions')
+
 const repository = (db) => {
 
-  const collection = db.collection('positions')
-
-  /*
+  /**
    * Get all positions
-   */
-
+   *
+   * @return positions Array of the returned positions
+   **/
   const getAllPositions = () => {
     return new Promise((resolve, reject) => {
-      let positions = []
-
-      const addPosition = (position) => {
-        positions.push(position)
-      }
-
-      const sendPositions = (err) => {
-        if (err) {
-          reject(new Error('An error occurred:' + err))
-        }
+      PositionModel.find().then( positions => {
         resolve(positions);
-      }
-
-      const coll = collection.find()
-
-      coll.forEach(addPosition, sendPositions)
+      }).catch( (err) => {
+        reject(new Error('An error occurred:' + err))
+      });
     })
   }
 
-  /*
+  /**
    * Get position by name
-   */
-
+   *
+   * @param name String comes from req.params
+   * @return position Object the returned position
+   **/
   const getPositionByName = ({name}) => {
     return new Promise( (resolve, reject) => {
       const query = {
         name,
       }
-      collection.find(query).toArray()
-        .then( (position) => {
-          resolve( position );
-        })
+      PositionModel.findOne(query, (err, position) => {
+        if (err) {
+          reject(new Error('An error occurred:' + err))
+        }
+        resolve( position );
+      })
     })
   }
 
   /*
    *  Discconnect from database
    */
-
   const disconnect = () => {
     db.close()
   }

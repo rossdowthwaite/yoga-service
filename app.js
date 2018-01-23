@@ -1,8 +1,7 @@
 require('dotenv').config()
 const server = require('./server/server')
-const repository = require('./repository/repository');
+const repository = require('./repository/repository')
 const db = require('./config/mongo')
-const MongoClient = require('mongodb').MongoClient
 
 db.connect().then( db => {
   repository.connect( db )

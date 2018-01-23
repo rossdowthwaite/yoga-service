@@ -1,10 +1,10 @@
-var MongoClient = require('mongodb').MongoClient
+const mongoose = require('mongoose')
 
 const connect = () => {
-    return MongoClient.connect(process.env.DATABASE_URL)
+    return mongoose.connect(process.env.DATABASE_URL)
       .then( connection => {
           console.log('Connected to database')
-          return connection.db(process.env.DATABASE_NAME);
+          return connection
       })
       .catch(err => {
           console.error('App starting error:', err);

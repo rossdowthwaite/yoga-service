@@ -57,15 +57,20 @@ mongoimport --db yoga-service --collection positions --drop --file ./database/se
 
 ### Yoga Service - Node.js
 
-Run
+Run the microservice:
 
 ```
 npm start
+```
+
+Run unit tests:
+
+```
+npm test
 ```
 
 
 ### Things to do
 
 * Docker
-* Unit tests
-* Env file
+* More Unit tests

@@ -1,9 +1,26 @@
 # Yoga service
 
-## Database connection
+## Technologies
+
+* Node.js
+* Express.js
+* MongoDB
+* Mocha
+
+## API
+
+| Method | 			Request URL | 		info    |
+| ------------- | ------------- | ------------- |
+| GET | ```/positions``` | Gets all positions |
+| GET | ```/positions/{{:slug}}```  | Get a single position by **slug** |
+| GET | ```/positions/{{:slug}}/next```  | Get a positions next available moves |
+| GET | ```/positions/{{:slug}}/next/{{:level}}```  | Get a positions next available moves by level |
+| GET | ```/positions/level/{{:level}}```  | Get all moves by **level** |
 
 
-**Connect to mongoDB**
+## Setup
+#### Database connection - MongoDB
+
 
 To start MongoDB run:
 
@@ -15,6 +32,7 @@ or with auth
 ```
 mongod --auth --port 27017 --dbpath ./data/db
 ```
+
 **Connect to mongoDB Shell**
 
 To open the shell run:
@@ -37,13 +55,14 @@ mongo --port 27017 -u "admin" -p "password" --authenticationDatabase "admin"
 mongoimport --db yoga-service --collection positions --drop --file ./database/seed-dataset.json --jsonArray
 ```
 
-## Yoga Service
+### Yoga Service - Node.js
 
 Run
 
 ```
 npm start
 ```
+
 
 ### Things to do
 

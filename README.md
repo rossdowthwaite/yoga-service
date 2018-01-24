@@ -1,12 +1,5 @@
 # Yoga service
 
-## Technologies
-
-* Node.js
-* Express.js
-* MongoDB
-* Mocha
-
 ## API
 
 | Method | 			Request URL | 		info    |
@@ -17,6 +10,20 @@
 | GET | ```/api/positions/{{:slug}}/next/{{:level}}```  | Get a positions next available moves by level |
 | GET | ```/api/positions/level/{{:level}}```  | Get all moves by **level** |
 
+## Docker
+
+Build the image
+
+```
+docker build -t yoga-service .
+```
+
+Start the container
+
+``` 
+docker run -p 8081:8081 yoga-service
+```
+
 
 ## Setup
 #### Database connection - MongoDB
@@ -25,12 +32,12 @@
 To start MongoDB run:
 
 ```
-mongod --port 27017 --dbpath /data/db
+mongod --port 27017 --dbpath {app_root_path}/data/db
 ```
 or with auth
 
 ```
-mongod --auth --port 27017 --dbpath ./data/db
+mongod --auth --port 27017 --dbpath {app_root_path}/data/db
 ```
 
 **Connect to mongoDB Shell**
@@ -52,7 +59,7 @@ mongo --port 27017 -u "admin" -p "password" --authenticationDatabase "admin"
 **Seed the database**
 
 ```
-mongoimport --db yoga-service --collection positions --drop --file ./database/seed-dataset.json --jsonArray
+mongoimport --db yoga-service --collection positions --drop --file ./config/seed-dataset.json --jsonArray
 ```
 
 ### Yoga Service - Node.js
@@ -69,8 +76,15 @@ Run unit tests:
 npm test
 ```
 
+## Technologies
 
-### Things to do
+* Node.js
+* Express.js
+* MongoDB
+* Mocha
+
+
+## Things to do
 
 * Docker
 * More Unit tests

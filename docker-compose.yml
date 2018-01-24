@@ -1,0 +1,21 @@
+version: "2"
+services:
+  yoga_service:
+    container_name: yoga_service
+    restart: always
+    build: .
+    ports:
+      - "3000:3000"
+
+  mongo-seed:
+    build:
+      context: .
+      dockerfile: mongo-seed/Dockerfile
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/mongo/data/db
+    ports:
+      - "27017:27017"

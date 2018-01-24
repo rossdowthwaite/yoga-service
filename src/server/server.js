@@ -2,8 +2,8 @@ const express =  require('express')
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-var debug = require('debug')('yoga-service:server');
-var http = require('http');
+const debug = require('debug')('yoga-service:server');
+const http = require('http');
 
 const positionsApi = require('../api/positions')
 

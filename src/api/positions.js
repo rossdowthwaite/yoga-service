@@ -1,14 +1,20 @@
 const status = require('http-status')
-var express = require('express');
+const express = require('express')
+const cors = require('cors')
 
 module.exports = (app, options) => {
   const {repo} = options
+
+  const corsOptions = {
+    origin: process.env.CORS_URL,
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
 
   app.get('/', (req, res, next) => {
     res.send({title:'hello world'})
   })
 
-  app.get('/api/positions', (req, res, next) => {
+  app.get('/api/positions', cors(corsOptions), (req, res, next) => {
     repo.getAllPositions()
       .then( positions => {
         res.status(status.OK).json(positions)

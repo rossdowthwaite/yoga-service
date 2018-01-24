@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./app",
-    "test": "mocha -R spec ./**/*.spec.js"
+    "start": "node ./src/app",
+    "test": "mocha -R spec ./src/**/*.spec.js"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -19,7 +19,7 @@
     "morgan": "~1.9.0",
     "serve-favicon": "~2.4.5"
   },
-  "main": "app.js",
+  "main": "/src/app.js",
   "author": "",
   "license": "ISC",
   "description": "",

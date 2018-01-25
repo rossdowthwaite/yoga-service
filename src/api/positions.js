@@ -5,9 +5,17 @@ const cors = require('cors')
 module.exports = (app, options) => {
   const {repo} = options
 
-  const corsOptions = {
-    origin: process.env.CORS_URL,
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+
+  var whitelist = process.env.CORS_URLS
+  var corsOptions = {
+    origin: function (origin, callback) {
+      if (whitelist.indexOf(origin) !== -1) {
+        callback(null, true)
+      } else {
+        callback(new Error('Not allowed by CORS'))
+      }
+    },
+    optionsSuccessStatus: 200
   }
 
   app.get('/', (req, res, next) => {

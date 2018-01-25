@@ -22,6 +22,22 @@ module.exports = (app, options) => {
       .catch(next)
   })
 
+  app.get('/api/positions/start', (req, res, next) => {
+    repo.getStartMoves()
+      .then( positions => {
+        res.status(status.OK).json(positions)
+      })
+      .catch(next)
+  })
+
+  app.get('/api/positions/start/:level', (req, res, next) => {
+    repo.getStartMovesByLevel()
+      .then( positions => {
+        res.status(status.OK).json(positions)
+      })
+      .catch(next)
+  })
+
   app.get('/api/positions/:slug/', (req, res, next) => {
     repo.getPositionBySlug(req.params)
       .then( position => {

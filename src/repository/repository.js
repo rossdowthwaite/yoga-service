@@ -106,6 +106,48 @@ const repository = (db) => {
     })
   }
 
+  /**
+   * Get start positions
+   *
+   * @param level String comes from req.params
+   * @return position Object the returned position
+   **/
+  const getStartMoves = () => {
+    return new Promise( (resolve, reject) => {
+      const query = {
+        start: true;
+      }
+      PositionModel.find(query, (err, position) => {
+        if (err) {
+          reject(new Error('An error occurred:' + err))
+        }
+        resolve( position );
+      })
+    })
+  }
+
+  /**
+   * Get start positions by level
+   *
+   * @param level String comes from req.params
+   * @return position Object the returned position
+   **/
+  const getStartMovesByLevel = ({level}) => {
+    return new Promise( (resolve, reject) => {
+      const query = {
+        level,
+        start: true,
+      }
+      PositionModel.find(query, (err, position) => {
+        if (err) {
+          reject(new Error('An error occurred:' + err))
+        }
+        resolve( position );
+      })
+    })
+  }
+
+
   /*
    *  Discconnect from database
    */
@@ -119,6 +161,7 @@ const repository = (db) => {
     getNextMoves,
     getNextMovesByLevel,
     getPositionsByLevel,
+    getStartMoves,
     disconnect,
   }
 }

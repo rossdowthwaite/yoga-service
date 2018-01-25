@@ -15,7 +15,7 @@
 	"tags": ["Yoga"],
 	"level": "beginner",
 	"image_url": "someUrl",
-	"start": false,
+	"start": true,
 	"description": "Yoga-move!"
 }, {
 	"name": "Box Neutral",

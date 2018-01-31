@@ -2,12 +2,12 @@ module.exports = [{
 	"name": "Downward-Facing dog",
 	"slug": "downward-facing-dog",
 	"next_moves": [{
-			"name": "box-neutral",
+			"slug": "box-neutral",
 			"level": "hard",
 			"start": false
 		},
 		{
-			"name": "warrior-2",
+			"slug": "warrior-2",
 			"level": "beginner",
 			"start": false
 		}
@@ -21,17 +21,17 @@ module.exports = [{
 	"name": "Box Neutral",
 	"slug": "box-neutral",
 	"next_moves": [{
-			"name": "downward-facing-dog",
+			"slug": "downward-facing-dog",
 			"level": "beginner",
 			"start": false
 		},
 		{
-			"name": "extended-puppy",
+			"slug": "extended-puppy",
 			"level": "beginner",
 			"start": false
 		},
 		{
-			"name": "balancing-the-cat",
+			"slug": "balancing-the-cat",
 			"level": "beginner",
 			"start": false
 		}
@@ -45,7 +45,7 @@ module.exports = [{
 	"name": "Extended Puppy",
 	"slug": "extended-puppy",
 	"next_moves": [{
-		"name": "box-neutral",
+		"slug": "box-neutral",
 		"level": "beginner",
 		"start": false
 	}],
@@ -58,12 +58,12 @@ module.exports = [{
 	"name": "Balancing the Cat",
 	"slug": "balancing-the-cat",
 	"next_moves": [{
-			"name": "box-neutral",
+			"slug": "box-neutral",
 			"level": "beginner",
 			"start": false
 		},
 		{
-			"name": "half-bow",
+			"slug": "half-bow",
 			"level": "beginner",
 			"start": false
 		}
@@ -77,12 +77,12 @@ module.exports = [{
 	"name": "Half Bow",
 	"slug": "half-bow",
 	"next_moves": [{
-			"name": "box-neutral",
+			"slug": "box-neutral",
 			"level": "beginner",
 			"start": false
 		},
 		{
-			"name": "balancing-the-cat",
+			"slug": "balancing-the-cat",
 			"level": "beginner",
 			"start": false
 		}
@@ -96,7 +96,7 @@ module.exports = [{
 	"name": "One Legged Downward-Facing Dog",
 	"slug": "one-legged-downward-facing-dog",
 	"next_moves": [{
-		"name": "downward-facing-dog",
+		"slug": "downward-facing-dog",
 		"level": "beginner",
 		"start": false
 	}],
@@ -109,7 +109,7 @@ module.exports = [{
 	"name": "Warrior II",
 	"slug": "warrior-2",
 	"next_moves": [{
-		"name": "plank",
+		"slug": "plank",
 		"level": "beginner",
 		"start": false
 	}],
@@ -122,12 +122,12 @@ module.exports = [{
 	"name": "Plank",
 	"slug": "plank",
 	"next_moves": [{
-			"name": "box-neutral",
+			"slug": "box-neutral",
 			"level": "beginner",
 			"start": false
 		},
 		{
-			"name": "downward-facing-dog",
+			"slug": "downward-facing-dog",
 			"level": "beginner",
 			"start": false
 		}

@@ -115,7 +115,7 @@ const repository = (db) => {
   const getStartMoves = () => {
     return new Promise( (resolve, reject) => {
       const query = {
-        start: true;
+        start: true
       }
       PositionModel.find(query, (err, position) => {
         if (err) {
@@ -138,7 +138,7 @@ const repository = (db) => {
         level,
         start: true,
       }
-      PositionModel.find(query, (err, position) => {
+      PositionModel.findOne(query, (err, position) => {
         if (err) {
           reject(new Error('An error occurred:' + err))
         }
@@ -161,6 +161,7 @@ const repository = (db) => {
     getNextMoves,
     getNextMovesByLevel,
     getPositionsByLevel,
+    getStartMovesByLevel,
     getStartMoves,
     disconnect,
   }

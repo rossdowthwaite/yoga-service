@@ -6,16 +6,11 @@ module.exports = (app, options) => {
   const {repo} = options
 
 
-  var whitelist = process.env.CORS_URLS
-  var corsOptions = {
-    origin: function (origin, callback) {
-      if (whitelist.indexOf(origin) !== -1) {
-        callback(null, true)
-      } else {
-        callback(new Error('Not allowed by CORS'))
-      }
-    },
-    optionsSuccessStatus: 200
+  var whitelist = process.env.CORS_URL
+
+  const corsOptions = {
+    origin: process.env.CORS_URL,
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   }
 
   app.get('/', (req, res, next) => {
@@ -39,7 +34,7 @@ module.exports = (app, options) => {
   })
 
   app.get('/api/positions/start/:level', (req, res, next) => {
-    repo.getStartMovesByLevel()
+    repo.getStartMovesByLevel(req.params)
       .then( positions => {
         res.status(status.OK).json(positions)
       })

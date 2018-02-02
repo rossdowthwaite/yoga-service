@@ -32,7 +32,9 @@ const repository = (db) => {
         if (err) {
           reject(new Error('An error occurred:' + err))
         }
-        resolve( position );
+        !position
+          ? resolve( {} )
+          : resolve( position );
       })
     })
   }
@@ -52,7 +54,9 @@ const repository = (db) => {
         if (err) {
           reject(new Error('An error occurred:' + err))
         }
-        resolve( moves );
+        !moves
+          ? resolve( [] )
+          : resolve( moves );
       })
     })
   }
@@ -97,11 +101,13 @@ const repository = (db) => {
       const query = {
         level,
       }
-      PositionModel.find(query, (err, position) => {
+      PositionModel.find(query, (err, positions) => {
         if (err) {
           reject(new Error('An error occurred:' + err))
         }
-        resolve( position );
+        !positions
+          ? resolve( [] )
+          : resolve( positions );
       })
     })
   }
@@ -117,11 +123,13 @@ const repository = (db) => {
       const query = {
         start: true
       }
-      PositionModel.find(query, (err, position) => {
+      PositionModel.find(query, (err, positions) => {
         if (err) {
           reject(new Error('An error occurred:' + err))
         }
-        resolve( position );
+        !positions
+          ? resolve( [] )
+          : resolve( positions );
       })
     })
   }
@@ -138,11 +146,13 @@ const repository = (db) => {
         level,
         start: true,
       }
-      PositionModel.findOne(query, (err, position) => {
+      PositionModel.findOne(query, (err, positions) => {
         if (err) {
           reject(new Error('An error occurred:' + err))
         }
-        resolve( position );
+        !positions
+          ? resolve( [] )
+          : resolve( positions );
       })
     })
   }

@@ -17,7 +17,7 @@ module.exports = (app, options) => {
     res.send({title:'hello world'})
   })
 
-  app.get('/api/positions', cors(corsOptions), (req, res, next) => {
+  app.get('/api/positions', cors(), (req, res, next) => {
     repo.getAllPositions()
       .then( positions => {
         res.status(status.OK).json(positions)
@@ -25,7 +25,7 @@ module.exports = (app, options) => {
       .catch(next)
   })
 
-  app.get('/api/positions/start', (req, res, next) => {
+  app.get('/api/positions/start', cors(), (req, res, next) => {
     repo.getStartMoves()
       .then( positions => {
         res.status(status.OK).json(positions)
@@ -33,7 +33,7 @@ module.exports = (app, options) => {
       .catch(next)
   })
 
-  app.get('/api/positions/start/:level', (req, res, next) => {
+  app.get('/api/positions/start/:level', cors(), (req, res, next) => {
     repo.getStartMovesByLevel(req.params)
       .then( positions => {
         res.status(status.OK).json(positions)
@@ -41,7 +41,7 @@ module.exports = (app, options) => {
       .catch(next)
   })
 
-  app.get('/api/positions/:slug/', (req, res, next) => {
+  app.get('/api/positions/:slug/', cors(), (req, res, next) => {
     repo.getPositionBySlug(req.params)
       .then( position => {
         res.status(status.OK).json(position)
@@ -49,7 +49,7 @@ module.exports = (app, options) => {
       .catch(next)
   })
 
-  app.get('/api/positions/:slug/next', (req, res, next) => {
+  app.get('/api/positions/:slug/next', cors(), (req, res, next) => {
     repo.getNextMoves(req.params)
       .then( moves => {
         res.status(status.OK).json(moves)
@@ -57,7 +57,7 @@ module.exports = (app, options) => {
       .catch(next)
   })
 
-  app.get('/api/positions/:slug/next/:level', (req, res, next) => {
+  app.get('/api/positions/:slug/next/:level', cors(), (req, res, next) => {
     repo.getNextMovesByLevel(req.params)
       .then( moves => {
         res.status(status.OK).json(moves)
@@ -65,7 +65,7 @@ module.exports = (app, options) => {
       .catch(next)
   })
 
-  app.get('/api/positions/level/:level', (req, res, next) => {
+  app.get('/api/positions/level/:level', cors(), (req, res, next) => {
     repo.getPositionsByLevel(req.params)
       .then( positions => {
         res.status(status.OK).json(positions)

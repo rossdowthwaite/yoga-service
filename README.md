@@ -1,14 +1,37 @@
 # Yoga Position API microservice
 
-An API to serve yoga moves
+## Introduction
 
-## Local Setup
+A containerized yoga position API. 
 
-Run
+## How to use
+
+### Prerequisites
+
+* Docker
+
+### Istallation
+
+Build the docker image
 
 ```
 docker-compose up --build
 ```
+
+### Usage
+
+Start the docker container
+
+```
+docker-compose up
+```
+
+Run tests
+
+```
+npm run tests
+```
+
 ## API reference
 
 | Method | 			Request URL | 		info    |
@@ -22,11 +45,11 @@ docker-compose up --build
 
 ## Technologies
 
-* Node.js
-* Express.js
-* MongoDB
-* Mocha
-* Docker
+* [ Node.js ](https://nodejs.org/en/)
+* [Express.js](https://expressjs.com/)
+* [MongoDB](https://www.mongodb.com/)
+* [Mocha](https://mochajs.org/)
+* [Docker](https://www.docker.com/)
 
 
 ## Things to do
